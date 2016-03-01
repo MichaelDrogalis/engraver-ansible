@@ -12,13 +12,13 @@
     image: "{{ ec2_image_id }}"
     instance_type: "{{ ec2_instance_type }}"
     instance_tags:
-      Name: "[{{ onyx_cluster_id }}] peer"
-      Role: onyx-peer
+      Name: "[{{ onyx_cluster_id }}] {{ profile_id }}"
+      Role: "{{ profile_id }}"
     vpc_subnet_id: "{{ vpc_subnet_id }}"
     exact_count: "{{ n_machine_instances }}"
     count_tag:
       Name: "[{{ onyx_cluster_id }}] {{ profile_id }}"
-      Role: onyx-peer
+      Role: "{{ profile_id }}"
     wait: yes
     wait_timeout: 300
 
