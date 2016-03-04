@@ -2,8 +2,6 @@
 - name: Launch the EC2 instances
   register: ec2_machines
   ec2:
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
     assign_public_ip: yes
     group: "[{{ onyx_cluster_id }}] Onyx Public Subnet Security Group"
     zone: "{{ aws_subnet_az }}"

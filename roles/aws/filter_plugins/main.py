@@ -1,8 +1,8 @@
 import boto.ec2
 
-def aws_nodes(name, role, aws_region, access_key, secret_access_key):
+def aws_nodes(name, role, aws_region):
   ips = []
-  conn = boto.ec2.connect_to_region(aws_region, aws_access_key_id=access_key, aws_secret_access_key=secret_access_key)
+  conn = boto.ec2.connect_to_region(aws_region)
 
   for r in conn.get_all_reservations():
     for i in r.instances:

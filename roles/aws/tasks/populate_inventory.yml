@@ -3,4 +3,4 @@
   add_host:
     name: "{{ item }}"
     groups: "{{ profile_id }}" 
-  with_items: "{{ ('[' ~ onyx_cluster_id ~ '] {{ profile_id }}') | aws_nodes(profile_id, aws_region, aws_access_key, aws_secret_key) }}"
+  with_items: "{{ ('[' ~ onyx_cluster_id ~ '] {{ profile_id }}') | aws_nodes(profile_id, aws_region) }}"

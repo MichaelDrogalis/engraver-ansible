@@ -1,7 +1,5 @@
 - name: Create the VPC
   ec2_vpc:
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
     state: present
     cidr_block: 172.0.0.0/16
     resource_tags: { "Name": "[{{ onyx_cluster_id }}] Onyx VPC", "Environment": "Onyx", "ClusterId": "{{ onyx_cluster_id }}"}
@@ -30,8 +28,6 @@
   ec2_group:
     name: "[{{ onyx_cluster_id }}] Onyx Public Subnet Security Group"
     description: "Base Security group for Onyx"
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
     vpc_id: "{{ vpc.vpc_id }}"
     region: "{{ aws_region }}"
     purge_rules: yes
