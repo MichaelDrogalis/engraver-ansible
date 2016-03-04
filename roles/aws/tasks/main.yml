@@ -1,7 +1,4 @@
 ---
-- include: populate_inventory.yml
-  when: not create_vpc
-
 - include: vpc.yml
   when: create_vpc
 

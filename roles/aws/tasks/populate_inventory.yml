@@ -1,6 +1,0 @@
----
-- name: Add hosts to inventory
-  add_host:
-    name: "{{ item }}"
-    groups: "{{ profile_id }}" 
-  with_items: "{{ ('[' ~ onyx_cluster_id ~ '] ' ~ profile_id) | aws_nodes(profile_id, aws_region) }}"
