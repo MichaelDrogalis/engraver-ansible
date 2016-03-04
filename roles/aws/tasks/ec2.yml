@@ -32,6 +32,7 @@
 - name: Find all relevant machines
   register: discovered_machines
   ec2_remote_facts:
+    region: "{{ aws_region }}"
     filters:
       instance-state-name: running
       "tag:Name": "[{{ onyx_cluster_id }}] {{ profile_id }}"
